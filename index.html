@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!-- WCAG 3.1.1: page language declared -->
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <!-- WCAG 1.4.4 / 1.4.10: zoom is NOT disabled -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- WCAG 2.4.2: descriptive page title -->
+  <title>Daily Bytes – Stories on design, code and wellbeing</title>
+  <meta name="description" content="A blog about design, code and wellbeing.">
+  <script>document.documentElement.className = 'js';</script>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <!-- WCAG 2.4.1: bypass blocks -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <p class="logo"><a href="#top" id="top">Daily Bytes</a></p>
+
+    <!-- Toggle only appears when JS is running and the screen is narrow -->
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle__icon" aria-hidden="true">&#9776;</span>
+      <span>Menu</span>
+    </button>
+
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="#top" aria-current="page">Home</a></li>
+        <li><a href="#articles">Articles</a></li>
+        <li><a href="#newsletter">Newsletter</a></li>
+        <li><a href="#footer">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- role=search landmark + accessible label -->
+    <form class="search" role="search" action="#" onsubmit="return false">
+      <label for="q" class="sr-only">Search articles</label>
+      <input id="q" name="q" type="search" placeholder="Search articles" autocomplete="off">
+      <button type="submit">Search</button>
+    </form>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="hero" aria-labelledby="page-title">
+      <h1 id="page-title">Stories on design, code and wellbeing</h1>
+      <p>Fresh reads every week.</p>
+    </section>
+
+    <section id="articles" class="wrap" aria-labelledby="articles-title">
+      <h2 id="articles-title">Latest articles</h2>
+
+      <div class="filters" role="group" aria-labelledby="filter-label">
+        <span id="filter-label" class="filters__label">Filter by topic:</span>
+        <button type="button" class="chip" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" class="chip" data-filter="Design" aria-pressed="false">Design</button>
+        <button type="button" class="chip" data-filter="Code" aria-pressed="false">Code</button>
+        <button type="button" class="chip" data-filter="Wellness" aria-pressed="false">Wellness</button>
+      </div>
+      <!-- WCAG 4.1.3: status messages announced without moving focus -->
+      <p id="result-count" class="result-count" role="status" aria-live="polite">Showing 6 of 6 articles</p>
+
+      <ul class="grid" id="post-list">
+        <li class="card" data-cat="Design">
+          <article aria-labelledby="t1">
+            <img src="assets/post1.svg" width="640" height="360" alt="Abstract blue gradient with a translucent phone-shaped panel, illustrating a dark interface" loading="lazy">
+            <h3 id="t1">Designing for Dark Mode</h3>
+            <p class="meta"><span>Design</span> · <time datetime="PT5M">5 min read</time></p>
+            <p>Contrast, elevation and colour choices that survive the switch.</p>
+            <a class="more" href="#t1">Read more<span class="sr-only"> about Designing for Dark Mode</span></a>
+          </article>
+        </li>
+        <li class="card" data-cat="Code">
+          <article aria-labelledby="t2">
+            <img src="assets/post2.svg" width="640" height="360" alt="Green gradient with overlapping shapes, representing branching code paths" loading="lazy">
+            <h3 id="t2">A Beginner's Guide to Git Branching</h3>
+            <p class="meta"><span>Code</span> · <time datetime="PT8M">8 min read</time></p>
+            <p>Branches explained with everyday analogies.</p>
+            <a class="more" href="#t2">Read more<span class="sr-only"> about A Beginner's Guide to Git Branching</span></a>
+          </article>
+        </li>
+        <li class="card" data-cat="Wellness">
+          <article aria-labelledby="t3">
+            <img src="assets/post3.svg" width="640" height="360" alt="Warm magenta-to-orange gradient with a soft circle, evoking movement and energy" loading="lazy">
+            <h3 id="t3">Ten-Minute Desk Stretches</h3>
+            <p class="meta"><span>Wellness</span> · <time datetime="PT4M">4 min read</time></p>
+            <p>Small moves that undo a long day of typing.</p>
+            <a class="more" href="#t3">Read more<span class="sr-only"> about Ten-Minute Desk Stretches</span></a>
+          </article>
+        </li>
+        <li class="card" data-cat="Code">
+          <article aria-labelledby="t4">
+            <img src="assets/post4.svg" width="640" height="360" alt="Blue gradient with a rounded rectangle, representing a page layout" loading="lazy">
+            <h3 id="t4">Why Semantic HTML Still Matters</h3>
+            <p class="meta"><span>Code</span> · <time datetime="PT6M">6 min read</time></p>
+            <p>The cheapest accessibility win you will ever get.</p>
+            <a class="more" href="#t4">Read more<span class="sr-only"> about Why Semantic HTML Still Matters</span></a>
+          </article>
+        </li>
+        <li class="card" data-cat="Design">
+          <article aria-labelledby="t5">
+            <img src="assets/post5.svg" width="640" height="360" alt="Purple gradient with overlapping translucent shapes, suggesting a colour palette" loading="lazy">
+            <h3 id="t5">Choosing a Colour Palette Everyone Can Read</h3>
+            <p class="meta"><span>Design</span> · <time datetime="PT7M">7 min read</time></p>
+            <p>Practical contrast rules for real projects.</p>
+            <a class="more" href="#t5">Read more<span class="sr-only"> about Choosing a Colour Palette Everyone Can Read</span></a>
+          </article>
+        </li>
+        <li class="card" data-cat="Wellness">
+          <article aria-labelledby="t6">
+            <img src="assets/post6.svg" width="640" height="360" alt="Sandy brown gradient with calm rounded shapes, suggesting rest" loading="lazy">
+            <h3 id="t6">Sleep, Screens and Focus</h3>
+            <p class="meta"><span>Wellness</span> · <time datetime="PT5M">5 min read</time></p>
+            <p>What the research says about evening screen time.</p>
+            <a class="more" href="#t6">Read more<span class="sr-only"> about Sleep, Screens and Focus</span></a>
+          </article>
+        </li>
+      </ul>
+    </section>
+
+    <section id="newsletter" class="wrap news" aria-labelledby="news-title">
+      <h2 id="news-title">Newsletter</h2>
+      <!-- novalidate: we provide our own accessible, consistent error messages -->
+      <form id="news-form" novalidate>
+        <div class="field">
+          <label for="email">Email address <span class="req">(required)</span></label>
+          <input id="email" name="email" type="email" autocomplete="email" required
+                 aria-describedby="email-hint email-error">
+          <p id="email-hint" class="hint">We send one email a week. Unsubscribe any time.</p>
+          <!-- Error text (not colour alone) is linked to the input -->
+          <p id="email-error" class="error" hidden></p>
+        </div>
+        <button type="submit">Subscribe</button>
+      </form>
+      <p id="news-status" class="success" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer id="footer" class="site-footer">
+    <p>&copy; 2026 Daily Bytes · <a href="mailto:hello@example.com">hello@example.com</a></p>
+  </footer>
+</body>
+</html>
